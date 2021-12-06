@@ -41,7 +41,7 @@ module.exports = {
     plugins: [
         new webpack.DefinePlugin({
             ENV: JSON.stringify(env),
-            ENV_CONFIGS: JSON.stringify(buildConfigs.ENV_CONFIGS[env]),
+            // ENV_CONFIGS: JSON.stringify(buildConfigs.ENV_CONFIGS[env]),
             API_URLS: JSON.stringify(buildConfigs.API_URLS[env]),
         }),
         // new HtmlWebpackPlugin({

@@ -6,8 +6,9 @@
     "license": "ISC",
     "scripts": {
         "start": "webpack serve --config webpack.development.js --mode development --env development",
-        "build:dev": "webpack --config webpack.production.js --env dev",
-        "build:prod": "webpack --config webpack.production.js --env prod",
+        "start:local": "webpack serve --config webpack.development.js --mode development --env local",
+        "build:dev": "webpack --config webpack.production.js --env development",
+        "build:prod": "webpack --config webpack.production.js --env production",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "dependencies": {

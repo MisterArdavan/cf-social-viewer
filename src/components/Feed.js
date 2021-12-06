@@ -12,11 +12,11 @@ const Feed = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
+        console.log(API_URLS);
         const getPosts = async () => {
             const resp = await fetch(
                 //TODO
-                // "http://127.0.0.1:8787/posts"
-                "https://cf-social.ardavan.workers.dev/posts"
+                API_URLS.POSTS_URL
             );
             const postsResp = await resp.json();
             setPosts(postsResp);
