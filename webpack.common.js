@@ -1,7 +1,6 @@
 const path = require("path");
 const webpack = require("webpack");
 const { argv } = require("yargs");
-const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 const buildConfigs = require("./src/configs/build");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 
@@ -25,16 +24,6 @@ module.exports = {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 use: ["style-loader", "css-loader"],
-                // use: [
-                //     { loader: "style-loader" },
-                //     {
-                //         loader: "css-loader",
-                //         options: {
-                //             importLoaders: 1,
-                //             modules: false,
-                //         },
-                //     },
-                // ],
             },
         ],
     },
@@ -45,7 +34,7 @@ module.exports = {
             API_URLS: JSON.stringify(buildConfigs.API_URLS[env]),
         }),
         new HtmlWebpackPlugin({
-            template: "src/index.html",
+            template: path.resolve(__dirname, "src", "index.html"),
         }),
     ],
 };

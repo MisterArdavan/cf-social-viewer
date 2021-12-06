@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "./Feed.css";
-import Navbar from "./Navbar";
-import NewPostModal from "./NewPostModal";
-import NewPostButton from "./NewPostButton";
+import Navbar from "../Navbar/Navbar";
+import NewPostModal from "../NewPostModal/NewPostModal";
+import NewPostButton from "../NewPostButton/NewPostButton";
+import Post from "../Post/Post";
 import axios from "axios";
-import Post from "./Post";
 
 const Feed = () => {
     const [modal, setModal] = useState(false);

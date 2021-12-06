@@ -25,7 +25,7 @@ const NewPostModal = (props) => {
                     />
                     <input
                         type="text"
-                        placeholder="title"
+                        placeholder="title (optional)"
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                     />
@@ -36,7 +36,9 @@ const NewPostModal = (props) => {
                     />
                 </div>
                 {props.error && (
-                    <div className="submit-error-alert">An error occurred: {props.error}</div>
+                    <div className="submit-error-alert alert-danger">
+                        An error occurred: {props.error}
+                    </div>
                 )}
                 <div className="new-post-actions">
                     <div className="submit button" onClick={handleSubmit}>

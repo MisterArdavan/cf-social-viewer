@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Navigate, Route } from "react-router-dom";
-import Feed from "./Feed";
+import Feed from "../Feed/Feed";
 
 function App() {
     return (
