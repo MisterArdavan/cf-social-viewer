@@ -44,6 +44,8 @@ module.exports = {
             // ENV_CONFIGS: JSON.stringify(buildConfigs.ENV_CONFIGS[env]),
             API_URLS: JSON.stringify(buildConfigs.API_URLS[env]),
         }),
-        new HtmlWebpackPlugin(),
+        new HtmlWebpackPlugin({
+            template: "src/index.html",
+        }),
     ],
 };
