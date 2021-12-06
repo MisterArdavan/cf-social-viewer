@@ -1,0 +1,15 @@
+{
+    "presets": [
+        [
+            "@babel/preset-env", {
+                "useBuiltIns": "usage",
+                "corejs": 3,
+                "targets": {
+                    "ie": "11"
+                }
+            }
+        ],
+        "@babel/preset-react"
+    ],
+    "plugins": ["@babel/transform-runtime", "@babel/plugin-proposal-class-properties"]
+}

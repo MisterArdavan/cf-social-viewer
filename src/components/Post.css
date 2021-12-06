@@ -1,0 +1,31 @@
+.post {
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  background-color: white;
+  min-height: 300px;
+  width: 300px;
+  padding: 20px;
+}
+
+.post-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+
+.post-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  grid-row-gap: 10px;
+}
+
+.post-username {
+  font-weight: 700;
+}
+
+.post-title {
+  text-align: center;
+  font-weight: bold;
+  text-transform: uppercase;
+}

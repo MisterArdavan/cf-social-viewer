@@ -1,0 +1,73 @@
+.new-post-modal {
+    position: absolute;
+    z-index: 200;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    width: 300px;
+    height: 400px;
+    padding: 20px;
+}
+
+.modal-background {
+    position: fixed;
+    left: 0;
+    top: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    width: 100%;
+    min-height: 100%;
+}
+
+@supports ((-webkit-backdrop-filter: none) or (backdrop-filter: none)) {
+    .modal-background {
+        background-color: rgba(255, 255, 255, 0.3);
+        -webkit-backdrop-filter: blur(5px);
+        backdrop-filter: blur(5px);
+    }
+}
+
+.button {
+    user-select: none;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.submit {
+    color: white;
+    background-color: green;
+}
+
+.new-post-actions {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+
+.new-post-inputs {
+    display: flex;
+    flex-direction: column;
+    grid-row-gap: 20px;
+}
+
+.new-post-inputs input {
+    height: 30px;
+    padding: 20px;
+    font-size: 20px;
+    font-family: "Roboto Mono", monospace;
+}
+
+.new-post-inputs textarea {
+    padding: 20px;
+    font-family: "Roboto Mono", monospace;
+    resize: none;
+    font-size: 20px;
+    height: 100px;
+}
