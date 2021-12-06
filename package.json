@@ -32,7 +32,7 @@
     "devDependencies": {
         "babel-loader": "^8.2.2",
         "css-loader": "^6.5.1",
-        "html-webpack-plugin": "^5.3.1",
+        "html-webpack-plugin": "^5.5.0",
         "json-server": "^0.16.3",
         "prettier": "2.3.1",
         "style-loader": "^3.3.1",
