@@ -29,11 +29,18 @@ const NewPostModal = (props) => {
                         value={title}
                         onChange={(e) => setTitle(e.target.value)}
                     />
-                    <textarea value={content} onChange={(e) => setContent(e.target.value)} />
+                    <textarea
+                        value={content}
+                        placeholder="content"
+                        onChange={(e) => setContent(e.target.value)}
+                    />
                 </div>
+                {props.error && (
+                    <div className="submit-error-alert">An error occurred: {props.error}</div>
+                )}
                 <div className="new-post-actions">
                     <div className="submit button" onClick={handleSubmit}>
-                        sumbit
+                        submit
                     </div>
                     <div className="cancel button" onClick={handleCancel}>
                         cancel

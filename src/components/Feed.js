@@ -8,38 +8,30 @@ import Post from "./Post";
 
 const Feed = () => {
     const [modal, setModal] = useState(false);
-    const [error, setError] = useState(""); //TODO
+    const [error, setError] = useState(null);
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
         const getPosts = async () => {
-            const resp = await fetch(
-                //TODO
-                API_URLS.POSTS_URL
-            );
-            const postsResp = await resp.json();
-            setPosts(postsResp);
+            const resp = await axios.get(API_URLS.POSTS_URL);
+            setPosts(resp.data);
         };
         getPosts();
     }, []);
 
     const sendPost = async (username, title, content) => {
-        hideModal();
         let data = {
             username,
             title,
             content,
         };
         try {
-            const resp = await axios.post(
-                // "http://127.0.0.1:8787/posts",
-                "https://cf-social.ardavan.workers.dev/posts",
-                data,
-                {
-                    headers: { "Content-Type": "application/json" },
-                }
-            );
+            const resp = await axios.post(API_URLS.POSTS_URL, data, {
+                headers: { "Content-Type": "application/json" },
+            });
             setPosts(resp.data);
+            setError(null);
+            hideModal();
         } catch (e) {
             setError(e.response.data);
         }
@@ -51,6 +43,7 @@ const Feed = () => {
 
     const hideModal = () => {
         setModal(false);
+        setError(null);
     };
 
     const renderPosts = () => {
@@ -67,8 +60,8 @@ const Feed = () => {
 
     return (
         <div className="feed-layout">
-            <Navbar brandName={"CloudFlare Social Media"} />
-            {modal && <NewPostModal onCancel={hideModal} onSubmit={sendPost} />}
+            <Navbar brandName={"Cloudflare Social Media"} />
+            {modal && <NewPostModal onCancel={hideModal} onSubmit={sendPost} error={error} />}
             {!modal && <NewPostButton onClick={showModal} />}
             <div className="posts">{renderPosts()}</div>
         </div>
