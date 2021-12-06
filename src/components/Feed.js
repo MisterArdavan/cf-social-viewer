@@ -12,7 +12,6 @@ const Feed = () => {
     const [posts, setPosts] = useState([]);
 
     useEffect(() => {
-        console.log(API_URLS);
         const getPosts = async () => {
             const resp = await fetch(
                 //TODO
@@ -71,7 +70,7 @@ const Feed = () => {
             <Navbar brandName={"CloudFlare Social Media"} />
             {modal && <NewPostModal onCancel={hideModal} onSubmit={sendPost} />}
             {!modal && <NewPostButton onClick={showModal} />}
-            <div className="posts">{renderPosts()}</div>;
+            <div className="posts">{renderPosts()}</div>
         </div>
     );
 };
