@@ -30,8 +30,8 @@
 .post-username {
     font-weight: 700;
     inline-size: 130px;
-    overflow: scroll;
-    max-height: 35px;
+    overflow: auto;
+    white-space: nowrap;
 }
 
 .post-title {
@@ -39,7 +39,6 @@
     font-weight: bold;
     text-transform: uppercase;
     overflow: scroll;
-    max-height: 3em;
 }
 
 .post-timestamp {
