@@ -1,7 +1,7 @@
 .post {
     box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
     background-color: white;
-    min-height: 300px;
+    height: 350px;
     width: 300px;
     padding: 20px;
 }
@@ -12,6 +12,7 @@
     justify-content: space-between;
     margin-bottom: 20px;
     align-items: baseline;
+    overflow-wrap: break-word;
 }
 
 .post-content {
@@ -21,14 +22,24 @@
     grid-row-gap: 10px;
 }
 
+.post-text {
+    overflow: scroll;
+    max-height: 250px;
+}
+
 .post-username {
     font-weight: 700;
+    inline-size: 130px;
+    overflow: scroll;
+    max-height: 35px;
 }
 
 .post-title {
     text-align: center;
     font-weight: bold;
     text-transform: uppercase;
+    overflow: scroll;
+    max-height: 3em;
 }
 
 .post-timestamp {
