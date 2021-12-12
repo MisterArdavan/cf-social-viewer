@@ -17,7 +17,8 @@ const Feed = () => {
             setPosts(resp.data);
         };
         getPosts();
-    }, []);
+        console.log('useEffect')
+    }, [modal]);
 
     const sendPost = async (username, title, content) => {
         let data = {
@@ -29,7 +30,6 @@ const Feed = () => {
             const resp = await axios.post(API_URLS.POSTS_URL, data, {
                 headers: { "Content-Type": "application/json" },
             });
-            setPosts(resp.data);
             setError(null);
             hideModal();
         } catch (e) {
