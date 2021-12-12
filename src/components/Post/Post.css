@@ -24,12 +24,12 @@
 
 .post-text {
     overflow: scroll;
-    max-height: 250px;
+    max-height: 220px;
 }
 
 .post-username {
     font-weight: 700;
-    inline-size: 130px;
+    inline-size: 125px;
     overflow: auto;
     white-space: nowrap;
 }
@@ -39,6 +39,7 @@
     font-weight: bold;
     text-transform: uppercase;
     overflow: scroll;
+    max-height: 3em;
 }
 
 .post-timestamp {
